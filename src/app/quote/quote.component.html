@@ -2,6 +2,6 @@
 <ul>
   <div *ngFor='let quote of quotes'>
     <li>{{quote.name}}</li>
-    <app-quote-details [quote]='quote'></app-quote-details>
+    <app-quote-details [quote]='quote' (isRemove)= 'removeQuote($event,i)'></app-quote-details>
   </div>
 </ul>

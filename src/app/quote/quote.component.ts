@@ -18,7 +18,11 @@ export class QuoteComponent implements OnInit {
 
   ]
 
-
+  removeQuote(isRemove,index){
+    if(isRemove){
+      this.quotes.splice(index,1);
+    }
+  }
   constructor() { }
 
   ngOnInit() {
