@@ -20,8 +20,12 @@ export class QuoteComponent implements OnInit {
 
   removeQuote(isRemove,index){
     if(isRemove){
+       let toRemove=confirm('Are you sure you want to delete ${this.quotes[index].name}')
+      
+     if(toRemove){
       this.quotes.splice(index,1);
     }
+  }
   }
   constructor() { }
 
