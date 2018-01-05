@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
-import {Quote} from './quote'
+import { Component, OnInit } from '@angular/core';
+import {Quote} from '../quote'
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-quote',
+  templateUrl: './quote.component.html',
+  styleUrls: ['./quote.component.css']
 })
-export class AppComponent {
+export class QuoteComponent implements OnInit {
 
-  quotes:Quote[]=[
+  quotes=[
     new Quote(1,'There are years that ask questions and years that answer.','-Zora Neale Hurston'),
     new Quote(2,'Smile the worst is yet to come.','-A song'),
     new Quote(3,'Today is a new day.','-African Proverb'),
@@ -17,8 +17,11 @@ export class AppComponent {
     new Quote(6,'We are the change that we seek.','-Barack Obama'),
 
   ]
-  quote;
-  constructor(){
-    this.quote=1
+
+
+  constructor() { }
+
+  ngOnInit() {
   }
+
 }
