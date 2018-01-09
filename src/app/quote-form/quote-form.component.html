@@ -1,13 +1,13 @@
 <!-- new quote -->
 <div class="container-fluid">
   <div class="row">
-      <form #quoteForm='ngForm'>
+      <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
          
           <div class="form-group">
 
             <label for="newquote">Create a New Quote</label>
-            <textarea class="form-control" id="newquote" rows="4" placeholder="Write your Quote here!" required [(ngModel)]="newQuote.name" name="newquote" #name="ngModel"></textarea>
-            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            <textarea class="form-control" id="newquote" rows="4" placeholder="Write your Quote here!" required [(ngModel)]="newQuote.newquote" name="newquote" #newquote="ngModel"></textarea>
+            <div [hidden]="newquote.valid || newquote.pristine" class="alert alert-danger">
              <p>Quote is required</p> 
             </div>            
           </div>
@@ -17,9 +17,10 @@
           <div class="form-group">
             
             <label for="author">Author</label>
-            <input type="text" required class="form-control" id="authorname" placeholder="Credit the Author!" >  
-            
-            
+            <input type="text" required class="form-control" id="authorname" placeholder="Credit the Author!" [(ngModel)]="newQuote.authorname" name="authorname" #authorname="ngModel">  
+            <div [hidden] ="authorname.valid || authorname.pristine" class="alert alert-danger">
+                <p>Author Name  is required</p> 
+            </div>   
           </div>
           <button type="submit" class="btn btn-success btn-lg">Publish Quote</button>
       </form>
