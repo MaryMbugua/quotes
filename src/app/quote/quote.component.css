@@ -1,4 +1,11 @@
 h1{text-align: center;
-    color: #dcdc13;
+    color: #DF005B;
+}
+hr{
+    border-color: rgb(231, 153, 185);
+}
+
+.quotas{
+    text-align: center;
 
 }
