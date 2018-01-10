@@ -1,18 +1,18 @@
-<h3>{{quote.newquote}}</h3>
+<h3>{{quote.description}}</h3>
 
-<h4>{{quote.authorname}}</h4>
+<h4>{{quote.name}}</h4>
 
 <h5>This quote was uploaded {{quote.createDate|dateCount}} days ago.</h5>
 
 
 
 
-<button (click)='voteUp($event)' class="btn btn-default btn-up" type="submit">
+<button (click)='voteUp()' class="btn btn-default btn-up" type="submit">
     <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
     <span class="badge">{{upvote}}</span>    
 </button>
 
-<button  (click)='voteDown($event)' class="btn btn-default btn-down" type="submit">
+<button  (click)='voteDown()' class="btn btn-default btn-down" type="submit">
     <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
     <span class="badge">{{downvote}}</span> 
 </button>
